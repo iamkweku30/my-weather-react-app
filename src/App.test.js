@@ -1,8 +1,9 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders Weather App title', () => {
-  const { getByText } = render(<App />);
-  const titleElement = getByText(/weather app/i);
+test('renders app title', () => {
+  render(<App />);
+  const titleElement = screen.getByText(/weather/i);
   expect(titleElement).toBeInTheDocument();
 });
+
